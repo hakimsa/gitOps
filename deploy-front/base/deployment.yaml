@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flutter-web
+  labels:
+    app: flutter-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flutter-web
+  template:
+    metadata:
+      labels:
+        app: flutter-web
+    spec:
+      containers:
+      - name: app
+        image: hakimsamouh/flutter-web:prod-1.0.3-7aad06d
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        readinessProbe:
+          httpGet:
+            path: .
+            port: 80
+          initialDelaySeconds: 5
+

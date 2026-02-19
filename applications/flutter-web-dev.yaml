@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: flutter-web-dev
+  namespace: argocd
+  annotations:
+    argocd-image-updater.argoproj.io/image-list: flutter-web=hakimsamouh/flutter-web
+    argocd-image-updater.argoproj.io/flutter-web.allow-tags: regexp:^dev-.*$
+    argocd-image-updater.argoproj.io/flutter-web.update-strategy: newest-build
+    argocd-image-updater.argoproj.io/write-back-method: git
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/hakimsa/testa.git
+    targetRevision: develop
+    path: k8s/deploy-front/dev
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: dev
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
