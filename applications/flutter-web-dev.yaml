@@ -3,13 +3,11 @@ kind: Application
 metadata:
   name: flutter-web-dev
   namespace: argocd
-  metadata:
   annotations:
     argocd-image-updater.argoproj.io/flutter-web.allow-tags: regexp:^dev-.*
     argocd-image-updater.argoproj.io/flutter-web.update-strategy: newest-build
     argocd-image-updater.argoproj.io/image-list: flutter-web=hakimsamouh/flutter-web
     argocd-image-updater.argoproj.io/write-back-method: git
-
 spec:
   project: default
   source:
