@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: https://github.com/hakimsa/testa.git
     targetRevision: main
-    path: k8s/deploy-front/prod
+    path: deploy-front/prod
   destination:
     server: https://kubernetes.default.svc
     namespace: prod

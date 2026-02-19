@@ -13,7 +13,7 @@ spec:
   source:
     repoURL: https://github.com/hakimsa/testa.git
     targetRevision: develop
-    path: k8s/deploy-front/dev
+    path: deploy-front/dev
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
