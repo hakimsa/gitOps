@@ -3,6 +3,7 @@ kind: Application
 metadata:
   name: flutter-web-prod
   namespace: argocd
+metadata: 
   annotations:
     argocd-image-updater.argoproj.io/image-list: flutter-web=hakimsamouh/flutter-web
     argocd-image-updater.argoproj.io/flutter-web.allow-tags: regexp:^prod-.*$
