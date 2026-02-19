@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: app
-        image: hakimsamouh/flutter-web:prod-1.0.3-7aad06d
+        image: hakimsamouh/flutter-web:dev-latest
         imagePullPolicy: Always
         ports:
         - containerPort: 80
