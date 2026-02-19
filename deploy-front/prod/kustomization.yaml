@@ -1,4 +1,5 @@
 resources:
   - ../base
-
-namespace: prod
+images:
+  - name: hakimsamouh/flutter-web
+    newTag: prod-latest
