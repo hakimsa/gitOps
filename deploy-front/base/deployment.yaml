@@ -13,6 +13,8 @@ spec:
     metadata:
       labels:
         app: flutter-web
+  securityContext:
+    fsGroup: 101 
     spec:
       containers:
         - name: app
