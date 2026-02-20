@@ -2,4 +2,4 @@ resources:
   - ../base
 images:
   - name: hakimsamouh/flutter-web
-    newTag: prod-latest
+    newTag: prod-1.0.3-52719a6
