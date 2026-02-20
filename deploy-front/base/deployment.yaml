@@ -25,7 +25,7 @@ spec:
             path: .
             port: 80
           initialDelaySeconds: 5
-            volumeMounts:
+          volumeMounts:
             - name: nginx-cache
               mountPath: /var/cache/nginx
       volumes:
