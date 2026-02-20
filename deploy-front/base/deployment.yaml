@@ -15,20 +15,22 @@ spec:
         app: flutter-web
     spec:
       containers:
-      - name: app
-        image: hakimsamouh/flutter-web:prod-1.0.3-52719a6
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
-        readinessProbe:
-          httpGet:
-            path: .
-            port: 80
-          initialDelaySeconds: 5
-          volumeMounts:
+        - name: app
+          image: hakimsamouh/flutter-web:prod-1.0.3-52719a6
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 80
+            initialDelaySeconds: 5
+
+          volumeMounts:   # ✅ AHORA ESTÁ EN EL NIVEL CORRECTO
             - name: nginx-cache
               mountPath: /var/cache/nginx
+
       volumes:
         - name: nginx-cache
           emptyDir: {}
-
