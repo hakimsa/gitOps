@@ -2,10 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: flutter-web
-  labels:
-    app: flutter-web
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: flutter-web
@@ -14,23 +12,14 @@ spec:
       labels:
         app: flutter-web
     spec:
-      securityContext:
-        fsGroup: 101
-
       containers:
-        - name: app
-          image: hakimsamouh/flutter-web:dev-1.0.0-be6f8cb
+        - name: flutter-web
+          image: hakimsamouh/flutter-web:dev-1.0.0-b1989d4
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           readinessProbe:
             httpGet:
               path: /
-              port: 80
-            initialDelaySeconds: 5
-          volumeMounts:
-            - name: nginx-cache
-              mountPath: /var/cache/nginx
-
-      volumes:
-        - name: nginx-cache
-          emptyDir: {}
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 10
