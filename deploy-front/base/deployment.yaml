@@ -13,22 +13,21 @@ spec:
     metadata:
       labels:
         app: flutter-web
-  securityContext:
-    fsGroup: 101 
     spec:
+      securityContext:
+        fsGroup: 101
+
       containers:
         - name: app
           image: hakimsamouh/flutter-web:dev-1.0.0-be6f8cb
           ports:
             - containerPort: 80
-
           readinessProbe:
             httpGet:
               path: /
               port: 80
             initialDelaySeconds: 5
-
-          volumeMounts:   # ✅ AHORA ESTÁ EN EL NIVEL CORRECTO
+          volumeMounts:
             - name: nginx-cache
               mountPath: /var/cache/nginx
 
