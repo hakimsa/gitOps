@@ -17,6 +17,8 @@ spec:
           image: hakimsamouh/flutter-web:dev-1.0.0-eb4df97
           ports:
             - containerPort: 8080
+      imagePullSecrets:
+        - name: dockerhub-cred
           readinessProbe:
             httpGet:
               path: /
