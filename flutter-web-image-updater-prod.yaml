@@ -15,6 +15,6 @@ spec:
             kustomize:
               name: hakimsamouh/flutter-web
   commonUpdateSettings:
-    updateStrategy: latest
+    updateStrategy: newest-build
   writeBackConfig:
     method: argocd
