@@ -6,7 +6,7 @@ metadata:
 spec:
   namespace: argocd   # <- aquí el namespace de las aplicaciones
   applicationRefs:
-    - namePattern: flutter-web-dev   # <- coincidir exactamente con la app
+    - namePattern: flutter-web-dev  # <- coincidir exactamente con la app
       useAnnotations: false
       images:
         - alias: flutter-web-image-dev
