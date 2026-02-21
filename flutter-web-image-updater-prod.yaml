@@ -6,11 +6,12 @@ metadata:
 spec:
   namespace: argocd   # <- aquí el namespace de las aplicaciones
   applicationRefs:
-    - namePattern: flutter-web-prod   # <- coincidir exactamente con la app
+    - namePattern: flutter-web-prod # <- coincidir exactamente con la app
       useAnnotations: false
       images:
         - alias: flutter-web-image-prod
           imageName: hakimsamouh/flutter-web
+          allowTags: ^prod-.*
           manifestTargets:
             kustomize:
               name: hakimsamouh/flutter-web

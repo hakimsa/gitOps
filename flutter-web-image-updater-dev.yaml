@@ -11,6 +11,7 @@ spec:
       images:
         - alias: flutter-web-image-dev
           imageName: hakimsamouh/flutter-web
+          allowTags: ^dev-.*
           manifestTargets:
             kustomize:
               name: hakimsamouh/flutter-web
