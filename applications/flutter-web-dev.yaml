@@ -7,7 +7,7 @@ metadata:
     argocd-image-updater.argoproj.io/flutter-web.allow-tags: regexp:^dev-.*
     argocd-image-updater.argoproj.io/flutter-web.update-strategy: alphabetical
     argocd-image-updater.argoproj.io/image-list: flutter-web=hakimsamouh/flutter-web
-    argocd-image-updater.argoproj.io/write-back-method: git
+    argocd-image-updater.argoproj.io/write-back-method: argocd
     argocd-image-updater.argoproj.io/git-branch: develop
 spec:
   project: default
