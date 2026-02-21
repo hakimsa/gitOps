@@ -16,12 +16,12 @@ spec:
         - name: flutter-web
           image: hakimsamouh/flutter-web:dev-1.0.0-eb4df97
           ports:
-            - containerPort: 8080
-      imagePullSecrets:
-        - name: dockerhub-credi
+            - containerPort: 80
           readinessProbe:
             httpGet:
               path: /
-              port: 8080
-            initialDelaySeconds: 15
-            periodSeconds: 10
+              port: 80
+            initialDelaySeconds: 10
+            periodSeconds: 5
+      imagePullSecrets:
+        - name: dockerhub-credi
