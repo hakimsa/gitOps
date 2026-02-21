@@ -1,7 +1,7 @@
 apiVersion: argocd-image-updater.argoproj.io/v1alpha1
 kind: ImageUpdater
 metadata:
-  name: flutter-web-updater
+  name: flutter-web-updater-prod
   namespace: argocd
 spec:
   namespace: argocd   # <- aquí el namespace de las aplicaciones
@@ -9,7 +9,7 @@ spec:
     - namePattern: flutter-web-prod   # <- coincidir exactamente con la app
       useAnnotations: false
       images:
-        - alias: flutter-web-image
+        - alias: flutter-web-image-prod
           imageName: hakimsamouh/flutter-web
           manifestTargets:
             kustomize:
