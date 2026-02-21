@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: flutter-web
-          image: hakimsamouh/flutter-web:dev-1.0.0-b1989d4
+          image: hakimsamouh/flutter-web:dev-1.0.0-eb4df97
           ports:
             - containerPort: 8080
           readinessProbe:
