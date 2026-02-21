@@ -9,7 +9,7 @@ spec:
     - namePattern: flutter-web-dev   # <- coincidir exactamente con la app
       useAnnotations: false
       images:
-        - alias: flutter-web-image
+        - alias: flutter-web-image-dev
           imageName: hakimsamouh/flutter-web
           manifestTargets:
             kustomize:
